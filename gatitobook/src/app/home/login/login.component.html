@@ -1,4 +1,4 @@
-<h4 class="text-center">Login</h4>
+<h4 class="text-center mt-4">Login</h4>
 
 <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
   <div class="form-group">
@@ -40,3 +40,7 @@
     Login
   </button>
 </form>
+
+<p class="mt-2">
+  Não possui cadastro?<a [routerLink]="['novousuario']"> Cadastre-se</a>
+</p>
