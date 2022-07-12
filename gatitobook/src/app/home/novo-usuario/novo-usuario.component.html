@@ -20,6 +20,10 @@
       placeholder="Nome de Usuário"
       formControlName="userName"
     />
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.usuarioExistente"
+      mensagem="Usuário já existe"
+    ></app-mensagem>
   </div>
   <div class="form-group">
     <input
