@@ -6,6 +6,22 @@
 >
   <div class="form-group">
     <input class="form-control" placeholder="E-mail" formControlName="email" />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.required &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-maill obrigatório"
+    >
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.email &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="Formato de e-mail invalido, tente novamente."
+    >
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
@@ -13,6 +29,22 @@
       placeholder="Nome Completo"
       formControlName="fullName"
     />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors?.required &&
+        novoUsuarioForm.get('fullName')?.touched
+      "
+      mensagem="Campo obrigatório"
+    >
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors?.minlength &&
+        novoUsuarioForm.get('fullName')?.touched
+      "
+      mensagem="Nome do usuário precisa ter pelo menos 3 caracteres."
+    >
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
